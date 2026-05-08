@@ -1,0 +1,1224 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20261.26.0226.1626                               -->
+<workbook original-version='18.1' source-build='2026.1.0 (20261.26.0226.1626)' source-platform='win' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <AccessibleZoneTabOrder />
+    <AnimationOnByDefault />
+    <AutoCreateAndUpdateDSDPhoneLayouts />
+    <MarkAnimation />
+    <ObjectModelEncapsulateLegacy />
+    <ObjectModelTableType />
+    <SchemaViewerObjectModel />
+    <SetMembershipControl />
+    <SheetIdentifierTracking />
+    <WindowsPersistSimpleIdentifiers />
+  </document-format-change-manifest>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <datasources>
+    <datasource caption='user_log_format1.csv+ (多个连接)' inline='true' name='federated.1pedc1q17n0c2r19hi48t190glbj' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='user_log_format1' name='textscan.1nuw9it1uakn0x1727hyc136c3ku'>
+            <connection class='textscan' directory='C:/Users/92717/Desktop/天猫复购分析项目/Tableau/源数据' filename='user_log_format1.csv' password='' server='' />
+          </named-connection>
+          <named-connection caption='user_info_format1' name='textscan.0ewxfex05bv3r71fduhlu1sb21uv'>
+            <connection class='textscan' directory='C:/Users/92717/Desktop/天猫复购分析项目/Tableau/源数据' filename='user_info_format1.csv' password='' server='' />
+          </named-connection>
+          <named-connection caption='train_format1' name='textscan.0ldc6zd1o4slem126e42x06v2a2p'>
+            <connection class='textscan' directory='C:/Users/92717/Desktop/天猫复购分析项目/Tableau/源数据' filename='train_format1.csv' password='' server='' />
+          </named-connection>
+        </named-connections>
+        <relation type='collection'>
+          <relation connection='textscan.1nuw9it1uakn0x1727hyc136c3ku' name='user_log_format1.csv' table='[user_log_format1#csv]' type='table'>
+            <columns character-set='UTF-8' header='yes' locale='zh_CN' separator=','>
+              <column datatype='integer' name='user_id' ordinal='0' />
+              <column datatype='integer' name='item_id' ordinal='1' />
+              <column datatype='integer' name='cat_id' ordinal='2' />
+              <column datatype='integer' name='merchant_id' ordinal='3' />
+              <column datatype='integer' name='time_stamp' ordinal='4' />
+              <column datatype='integer' name='action_type' ordinal='5' />
+            </columns>
+          </relation>
+          <relation connection='textscan.0ldc6zd1o4slem126e42x06v2a2p' name='train_format1.csv' table='[train_format1#csv]' type='table'>
+            <columns character-set='UTF-8' header='yes' locale='zh_CN' separator=','>
+              <column datatype='integer' name='user_id' ordinal='0' />
+              <column datatype='integer' name='merchant_id' ordinal='1' />
+              <column datatype='integer' name='label' ordinal='2' />
+            </columns>
+          </relation>
+          <relation connection='textscan.0ldc6zd1o4slem126e42x06v2a2p' name='user_info_format1.csv' table='[user_info_format1#csv]' type='table'>
+            <columns character-set='UTF-8' header='yes' locale='zh_CN' separator=','>
+              <column datatype='integer' name='user_id' ordinal='0' />
+              <column datatype='integer' name='age_range' ordinal='1' />
+              <column datatype='integer' name='gender' ordinal='2' />
+            </columns>
+          </relation>
+        </relation>
+        <cols>
+          <map key='[action_type]' value='[user_log_format1.csv].[action_type]' />
+          <map key='[age_range]' value='[user_info_format1.csv].[age_range]' />
+          <map key='[cat_id]' value='[user_log_format1.csv].[cat_id]' />
+          <map key='[gender]' value='[user_info_format1.csv].[gender]' />
+          <map key='[item_id]' value='[user_log_format1.csv].[item_id]' />
+          <map key='[label]' value='[train_format1.csv].[label]' />
+          <map key='[merchant_id (train_format1.csv)]' value='[train_format1.csv].[merchant_id]' />
+          <map key='[merchant_id]' value='[user_log_format1.csv].[merchant_id]' />
+          <map key='[time_stamp]' value='[user_log_format1.csv].[time_stamp]' />
+          <map key='[user_id (train_format1.csv)]' value='[train_format1.csv].[user_id]' />
+          <map key='[user_id (user_info_format1.csv)]' value='[user_info_format1.csv].[user_id]' />
+          <map key='[user_id]' value='[user_log_format1.csv].[user_id]' />
+        </cols>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[user_log_format1.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;zh_Hans_CN&quot;</attribute>
+              <attribute datatype='string' name='currency'>&quot;¥&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;zh_CN&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[train_format1.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;zh_Hans_CN&quot;</attribute>
+              <attribute datatype='string' name='currency'>&quot;¥&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;zh_CN&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[user_info_format1.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;zh_Hans_CN&quot;</attribute>
+              <attribute datatype='string' name='currency'>&quot;¥&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;zh_CN&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>user_id</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[user_id]</local-name>
+            <parent-name>[user_log_format1.csv]</parent-name>
+            <remote-alias>user_id</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[user_log_format1.csv_39908C60349543639F323DAC172B66A4]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>item_id</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[item_id]</local-name>
+            <parent-name>[user_log_format1.csv]</parent-name>
+            <remote-alias>item_id</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[user_log_format1.csv_39908C60349543639F323DAC172B66A4]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>cat_id</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[cat_id]</local-name>
+            <parent-name>[user_log_format1.csv]</parent-name>
+            <remote-alias>cat_id</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[user_log_format1.csv_39908C60349543639F323DAC172B66A4]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>merchant_id</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[merchant_id]</local-name>
+            <parent-name>[user_log_format1.csv]</parent-name>
+            <remote-alias>merchant_id</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[user_log_format1.csv_39908C60349543639F323DAC172B66A4]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>time_stamp</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[time_stamp]</local-name>
+            <parent-name>[user_log_format1.csv]</parent-name>
+            <remote-alias>time_stamp</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[user_log_format1.csv_39908C60349543639F323DAC172B66A4]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>action_type</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[action_type]</local-name>
+            <parent-name>[user_log_format1.csv]</parent-name>
+            <remote-alias>action_type</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[user_log_format1.csv_39908C60349543639F323DAC172B66A4]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>user_id</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[user_id (train_format1.csv)]</local-name>
+            <parent-name>[train_format1.csv]</parent-name>
+            <remote-alias>user_id</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[train_format1.csv_4FF15E576B3042EEA68A372AEA1C891D]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>merchant_id</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[merchant_id (train_format1.csv)]</local-name>
+            <parent-name>[train_format1.csv]</parent-name>
+            <remote-alias>merchant_id</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[train_format1.csv_4FF15E576B3042EEA68A372AEA1C891D]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>label</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[label]</local-name>
+            <parent-name>[train_format1.csv]</parent-name>
+            <remote-alias>label</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[train_format1.csv_4FF15E576B3042EEA68A372AEA1C891D]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>user_id</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[user_id (user_info_format1.csv)]</local-name>
+            <parent-name>[user_info_format1.csv]</parent-name>
+            <remote-alias>user_id</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[user_info_format1.csv_85C7534BC1E941B0A287495E9C3113FD]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>age_range</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[age_range]</local-name>
+            <parent-name>[user_info_format1.csv]</parent-name>
+            <remote-alias>age_range</remote-alias>
+            <ordinal>10</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[user_info_format1.csv_85C7534BC1E941B0A287495E9C3113FD]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>gender</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[gender]</local-name>
+            <parent-name>[user_info_format1.csv]</parent-name>
+            <remote-alias>gender</remote-alias>
+            <ordinal>11</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[user_info_format1.csv_85C7534BC1E941B0A287495E9C3113FD]</object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='人均下单次数' datatype='real' name='[Calculation_3397006119448576]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='{FIXED [label]: SUM(IF [action_type] = 2 THEN 1 END)} / {FIXED [label]: COUNTD([user_id])}' />
+      </column>
+      <column caption='人均付款次数' datatype='real' name='[Calculation_7997363414269952]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='{FIXED [label]: SUM(IF [action_type] = 3 THEN 1 END)} / {FIXED [label]: COUNTD([user_id])}' />
+      </column>
+      <column caption='下单率' datatype='real' name='[Calculation_7997363422556165]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='SUM(IF [action_type] = 2 THEN 1 END) / SUM(IF [action_type] = 0 THEN 1 END)' />
+      </column>
+      <column caption='付款率' datatype='real' name='[Calculation_7997363422625798]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='SUM(IF [action_type] = 3 THEN 1 END) / SUM(IF [action_type] = 2 THEN 1 END)' />
+      </column>
+      <column caption='人均浏览次数' datatype='real' name='[Calculation_7997363473465352]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='{FIXED [label]: SUM(IF [action_type] = 0 THEN 1 END)} &#13;&#10;/ &#13;&#10;{FIXED [label]: COUNTD([user_id])}' />
+      </column>
+      <column caption='年龄分段' datatype='string' name='[Calculation_7997363478970380]' role='dimension' type='nominal'>
+        <calculation class='tableau' formula='CASE [age_range]&#13;&#10;    WHEN 0 THEN &apos;10以下&apos;&#13;&#10;    WHEN 1 THEN &apos;10-20岁&apos;&#13;&#10;    WHEN 2 THEN &apos;21-25岁&apos;&#13;&#10;    WHEN 3 THEN &apos;26-30岁&apos;&#13;&#10;    WHEN 4 THEN &apos;31-35岁&apos;&#13;&#10;    WHEN 5 THEN &apos;36-40岁&apos;&#13;&#10;    WHEN 6 THEN &apos;41-45岁&apos;&#13;&#10;    WHEN 7 THEN &apos;46岁及以上&apos;&#13;&#10;END' />
+      </column>
+      <column caption='train_format1.csv' datatype='table' name='[__tableau_internal_object_id__].[train_format1.csv_4FF15E576B3042EEA68A372AEA1C891D]' role='measure' type='quantitative' />
+      <column caption='user_info_format1.csv' datatype='table' name='[__tableau_internal_object_id__].[user_info_format1.csv_85C7534BC1E941B0A287495E9C3113FD]' role='measure' type='quantitative' />
+      <column caption='user_log_format1.csv' datatype='table' name='[__tableau_internal_object_id__].[user_log_format1.csv_39908C60349543639F323DAC172B66A4]' role='measure' type='quantitative' />
+      <column caption='Action Type' datatype='integer' name='[action_type]' role='measure' type='quantitative'>
+        <aliases>
+          <alias key='0' value='浏览' />
+          <alias key='1' value='加购' />
+          <alias key='2' value='下单' />
+          <alias key='3' value='付款' />
+        </aliases>
+      </column>
+      <column caption='Age Range' datatype='integer' name='[age_range]' role='measure' type='quantitative' />
+      <column caption='Cat Id' datatype='integer' name='[cat_id]' role='dimension' type='ordinal' />
+      <column caption='Gender' datatype='integer' name='[gender]' role='measure' type='quantitative' />
+      <column caption='Item Id' datatype='integer' name='[item_id]' role='dimension' type='ordinal' />
+      <column aggregation='Sum' caption='Label' datatype='integer' name='[label]' role='dimension' type='ordinal'>
+        <aliases>
+          <alias key='0' value='非复购用户' />
+          <alias key='1' value='复购用户' />
+        </aliases>
+      </column>
+      <column caption='Merchant Id (Train Format1.Csv)' datatype='integer' name='[merchant_id (train_format1.csv)]' role='dimension' type='ordinal' />
+      <column caption='Merchant Id' datatype='integer' name='[merchant_id]' role='dimension' type='ordinal' />
+      <column caption='Time Stamp' datatype='integer' name='[time_stamp]' role='measure' type='quantitative' />
+      <column caption='User Id (Train Format1.Csv)' datatype='integer' name='[user_id (train_format1.csv)]' role='dimension' type='ordinal' />
+      <column caption='User Id (User Info Format1.Csv)' datatype='integer' name='[user_id (user_info_format1.csv)]' role='dimension' type='ordinal' />
+      <column caption='User Id' datatype='integer' name='[user_id]' role='dimension' type='ordinal' />
+      <column-instance column='[label]' derivation='None' name='[none:label:ok]' pivot='key' type='ordinal' />
+      <layout dim-ordering='alphabetic' measure-ordering='alphabetic' rowDisplayCount='10000' show-structure='true' />
+      <style>
+        <style-rule element='mark'>
+          <encoding attr='color' field='[none:label:ok]' type='palette'>
+            <map to='#ca5422'>
+              <bucket>0</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>%null%</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>1</bucket>
+            </map>
+          </encoding>
+        </style-rule>
+      </style>
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;中国&quot;' />
+      </semantic-values>
+      <date-options start-of-week='monday' />
+      <object-graph>
+        <objects>
+          <object caption='train_format1.csv' id='train_format1.csv_4FF15E576B3042EEA68A372AEA1C891D'>
+            <properties context=''>
+              <relation connection='textscan.0ldc6zd1o4slem126e42x06v2a2p' name='train_format1.csv' table='[train_format1#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='zh_CN' separator=','>
+                  <column datatype='integer' name='user_id' ordinal='0' />
+                  <column datatype='integer' name='merchant_id' ordinal='1' />
+                  <column datatype='integer' name='label' ordinal='2' />
+                </columns>
+              </relation>
+            </properties>
+          </object>
+          <object caption='user_info_format1.csv' id='user_info_format1.csv_85C7534BC1E941B0A287495E9C3113FD'>
+            <properties context=''>
+              <relation connection='textscan.0ldc6zd1o4slem126e42x06v2a2p' name='user_info_format1.csv' table='[user_info_format1#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='zh_CN' separator=','>
+                  <column datatype='integer' name='user_id' ordinal='0' />
+                  <column datatype='integer' name='age_range' ordinal='1' />
+                  <column datatype='integer' name='gender' ordinal='2' />
+                </columns>
+              </relation>
+            </properties>
+          </object>
+          <object caption='user_log_format1.csv' id='user_log_format1.csv_39908C60349543639F323DAC172B66A4'>
+            <properties context=''>
+              <relation connection='textscan.1nuw9it1uakn0x1727hyc136c3ku' name='user_log_format1.csv' table='[user_log_format1#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='zh_CN' separator=','>
+                  <column datatype='integer' name='user_id' ordinal='0' />
+                  <column datatype='integer' name='item_id' ordinal='1' />
+                  <column datatype='integer' name='cat_id' ordinal='2' />
+                  <column datatype='integer' name='merchant_id' ordinal='3' />
+                  <column datatype='integer' name='time_stamp' ordinal='4' />
+                  <column datatype='integer' name='action_type' ordinal='5' />
+                </columns>
+              </relation>
+            </properties>
+          </object>
+        </objects>
+        <relationships>
+          <relationship>
+            <expression op='='>
+              <expression op='[user_id]' />
+              <expression op='[user_id (train_format1.csv)]' />
+            </expression>
+            <first-end-point object-id='user_log_format1.csv_39908C60349543639F323DAC172B66A4' />
+            <second-end-point object-id='train_format1.csv_4FF15E576B3042EEA68A372AEA1C891D' />
+          </relationship>
+          <relationship>
+            <expression op='='>
+              <expression op='[user_id (train_format1.csv)]' />
+              <expression op='[user_id (user_info_format1.csv)]' />
+            </expression>
+            <first-end-point object-id='train_format1.csv_4FF15E576B3042EEA68A372AEA1C891D' />
+            <second-end-point object-id='user_info_format1.csv_85C7534BC1E941B0A287495E9C3113FD' />
+          </relationship>
+        </relationships>
+      </object-graph>
+    </datasource>
+  </datasources>
+  <actions>
+    <action caption='突出显示 1 (已生成)' name='[Action1_9DC73E9494D94F71A9259E4FD7C33CDA]'>
+      <activation auto-clear='true' type='on-select' />
+      <source type='sheet' worksheet='用户年龄分布' />
+      <command command='tsc:brush'>
+        <param name='field-captions' value='Label' />
+        <param name='target' value='用户年龄分布' />
+      </command>
+    </action>
+  </actions>
+  <worksheets>
+    <worksheet name='下单率'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='user_log_format1.csv+ (多个连接)' name='federated.1pedc1q17n0c2r19hi48t190glbj' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1pedc1q17n0c2r19hi48t190glbj'>
+            <column caption='下单率' datatype='real' name='[Calculation_7997363422556165]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='SUM(IF [action_type] = 2 THEN 1 END) / SUM(IF [action_type] = 0 THEN 1 END)' />
+            </column>
+            <column caption='Action Type' datatype='integer' name='[action_type]' role='measure' type='quantitative'>
+              <aliases>
+                <alias key='0' value='浏览' />
+                <alias key='1' value='加购' />
+                <alias key='2' value='下单' />
+                <alias key='3' value='付款' />
+              </aliases>
+            </column>
+            <column aggregation='Sum' caption='Label' datatype='integer' name='[label]' role='dimension' type='ordinal'>
+              <aliases>
+                <alias key='0' value='非复购用户' />
+                <alias key='1' value='复购用户' />
+              </aliases>
+            </column>
+            <column-instance column='[label]' derivation='None' name='[none:label:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[Calculation_7997363422556165]' derivation='User' name='[usr:Calculation_7997363422556165:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.1pedc1q17n0c2r19hi48t190glbj].[none:label:ok]'>
+            <groupfilter function='union' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate'>
+              <groupfilter function='member' level='[none:label:ok]' member='0' />
+              <groupfilter function='member' level='[none:label:ok]' member='1' />
+            </groupfilter>
+          </filter>
+          <slices>
+            <column>[federated.1pedc1q17n0c2r19hi48t190glbj].[none:label:ok]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='cell'>
+            <format attr='text-format' field='[federated.1pedc1q17n0c2r19hi48t190glbj].[usr:Calculation_7997363422556165:qk]' value='p0.00%' />
+          </style-rule>
+          <style-rule element='label'>
+            <format attr='text-format' field='[federated.1pedc1q17n0c2r19hi48t190glbj].[usr:Calculation_7997363422556165:qk]' value='p0.00%' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane id='13' selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Bar' />
+            <encodings>
+              <color column='[federated.1pedc1q17n0c2r19hi48t190glbj].[none:label:ok]' />
+              <text column='[federated.1pedc1q17n0c2r19hi48t190glbj].[usr:Calculation_7997363422556165:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.1pedc1q17n0c2r19hi48t190glbj].[usr:Calculation_7997363422556165:qk]</rows>
+        <cols>[federated.1pedc1q17n0c2r19hi48t190glbj].[none:label:ok]</cols>
+      </table>
+      <simple-id uuid='{79E91AB1-C16D-4ABE-8D59-4F669AAD752D}' />
+    </worksheet>
+    <worksheet name='人均下单次数'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontcolor='#000000' fontname='Microsoft YaHei'>人均下单次数</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='user_log_format1.csv+ (多个连接)' name='federated.1pedc1q17n0c2r19hi48t190glbj' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1pedc1q17n0c2r19hi48t190glbj'>
+            <column caption='人均下单次数' datatype='real' name='[Calculation_3397006119448576]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='{FIXED [label]: SUM(IF [action_type] = 2 THEN 1 END)} / {FIXED [label]: COUNTD([user_id])}' />
+            </column>
+            <column caption='Action Type' datatype='integer' name='[action_type]' role='measure' type='quantitative'>
+              <aliases>
+                <alias key='0' value='浏览' />
+                <alias key='1' value='加购' />
+                <alias key='2' value='下单' />
+                <alias key='3' value='付款' />
+              </aliases>
+            </column>
+            <column aggregation='Sum' caption='Label' datatype='integer' name='[label]' role='dimension' type='ordinal'>
+              <aliases>
+                <alias key='0' value='非复购用户' />
+                <alias key='1' value='复购用户' />
+              </aliases>
+            </column>
+            <column-instance column='[label]' derivation='None' name='[none:label:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[Calculation_3397006119448576]' derivation='Sum' name='[sum:Calculation_3397006119448576:qk]' pivot='key' type='quantitative' />
+            <column caption='User Id' datatype='integer' name='[user_id]' role='dimension' type='ordinal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.1pedc1q17n0c2r19hi48t190glbj].[none:label:ok]'>
+            <groupfilter function='union' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate'>
+              <groupfilter function='member' level='[none:label:ok]' member='0' />
+              <groupfilter function='member' level='[none:label:ok]' member='1' />
+            </groupfilter>
+          </filter>
+          <slices>
+            <column>[federated.1pedc1q17n0c2r19hi48t190glbj].[none:label:ok]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <format attr='render-fold-reversed' value='true' />
+          </style-rule>
+          <style-rule element='cell'>
+            <format attr='cell-w' value='60' />
+            <format attr='cell-h' value='20' />
+            <format attr='cell' value='20' />
+            <format attr='cell-q' value='100' />
+          </style-rule>
+          <style-rule element='worksheet'>
+            <format attr='display-field-labels' scope='cols' value='false' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane id='20' selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Bar' />
+            <mark-sizing mark-sizing-setting='marks-scaling-off' />
+            <encodings>
+              <color column='[federated.1pedc1q17n0c2r19hi48t190glbj].[none:label:ok]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='size' value='1.5272375345230103' />
+                <format attr='mark-labels-show' value='false' />
+              </style-rule>
+              <style-rule element='pane'>
+                <format attr='aspect' value='0' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.1pedc1q17n0c2r19hi48t190glbj].[sum:Calculation_3397006119448576:qk]</rows>
+        <cols>[federated.1pedc1q17n0c2r19hi48t190glbj].[none:label:ok]</cols>
+      </table>
+      <simple-id uuid='{8426473D-C316-4C50-9B6B-688B0460DCF3}' />
+    </worksheet>
+    <worksheet name='人均付款次数'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='user_log_format1.csv+ (多个连接)' name='federated.1pedc1q17n0c2r19hi48t190glbj' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1pedc1q17n0c2r19hi48t190glbj'>
+            <column caption='人均付款次数' datatype='real' name='[Calculation_7997363414269952]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='{FIXED [label]: SUM(IF [action_type] = 3 THEN 1 END)} / {FIXED [label]: COUNTD([user_id])}' />
+            </column>
+            <column caption='Action Type' datatype='integer' name='[action_type]' role='measure' type='quantitative'>
+              <aliases>
+                <alias key='0' value='浏览' />
+                <alias key='1' value='加购' />
+                <alias key='2' value='下单' />
+                <alias key='3' value='付款' />
+              </aliases>
+            </column>
+            <column aggregation='Sum' caption='Label' datatype='integer' name='[label]' role='dimension' type='ordinal'>
+              <aliases>
+                <alias key='0' value='非复购用户' />
+                <alias key='1' value='复购用户' />
+              </aliases>
+            </column>
+            <column-instance column='[label]' derivation='None' name='[none:label:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[Calculation_7997363414269952]' derivation='Sum' name='[sum:Calculation_7997363414269952:qk]' pivot='key' type='quantitative' />
+            <column caption='User Id' datatype='integer' name='[user_id]' role='dimension' type='ordinal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.1pedc1q17n0c2r19hi48t190glbj].[none:label:ok]'>
+            <groupfilter function='union' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate'>
+              <groupfilter function='member' level='[none:label:ok]' member='0' />
+              <groupfilter function='member' level='[none:label:ok]' member='1' />
+            </groupfilter>
+          </filter>
+          <slices>
+            <column>[federated.1pedc1q17n0c2r19hi48t190glbj].[none:label:ok]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='worksheet'>
+            <format attr='display-field-labels' scope='cols' value='false' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.1pedc1q17n0c2r19hi48t190glbj].[none:label:ok]' />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>[federated.1pedc1q17n0c2r19hi48t190glbj].[sum:Calculation_7997363414269952:qk]</rows>
+        <cols>[federated.1pedc1q17n0c2r19hi48t190glbj].[none:label:ok]</cols>
+      </table>
+      <simple-id uuid='{53D78DC7-1676-443B-BA70-C503B1AD488B}' />
+    </worksheet>
+    <worksheet name='人均浏览次数'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='user_log_format1.csv+ (多个连接)' name='federated.1pedc1q17n0c2r19hi48t190glbj' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1pedc1q17n0c2r19hi48t190glbj'>
+            <column caption='人均浏览次数' datatype='real' name='[Calculation_7997363473465352]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='{FIXED [label]: SUM(IF [action_type] = 0 THEN 1 END)} &#13;&#10;/ &#13;&#10;{FIXED [label]: COUNTD([user_id])}' />
+            </column>
+            <column caption='Action Type' datatype='integer' name='[action_type]' role='measure' type='quantitative'>
+              <aliases>
+                <alias key='0' value='浏览' />
+                <alias key='1' value='加购' />
+                <alias key='2' value='下单' />
+                <alias key='3' value='付款' />
+              </aliases>
+            </column>
+            <column aggregation='Sum' caption='Label' datatype='integer' name='[label]' role='dimension' type='ordinal'>
+              <aliases>
+                <alias key='0' value='非复购用户' />
+                <alias key='1' value='复购用户' />
+              </aliases>
+            </column>
+            <column-instance column='[label]' derivation='None' name='[none:label:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[Calculation_7997363473465352]' derivation='Sum' name='[sum:Calculation_7997363473465352:qk]' pivot='key' type='quantitative' />
+            <column caption='User Id' datatype='integer' name='[user_id]' role='dimension' type='ordinal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.1pedc1q17n0c2r19hi48t190glbj].[none:label:ok]'>
+            <groupfilter function='union' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate'>
+              <groupfilter function='member' level='[none:label:ok]' member='0' />
+              <groupfilter function='member' level='[none:label:ok]' member='1' />
+            </groupfilter>
+          </filter>
+          <slices>
+            <column>[federated.1pedc1q17n0c2r19hi48t190glbj].[none:label:ok]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='cell'>
+            <format attr='cell-w' value='20' />
+            <format attr='cell-h' value='20' />
+            <format attr='cell' value='20' />
+            <format attr='cell-q' value='100' />
+          </style-rule>
+          <style-rule element='header'>
+            <format attr='text-align' data-class='subtotal' scope='cols' value='center' />
+          </style-rule>
+          <style-rule element='label'>
+            <format attr='text-align' value='center' />
+            <format attr='text-align' scope='cols' value='center' />
+            <format attr='text-align' scope='rows' value='center' />
+          </style-rule>
+          <style-rule element='worksheet'>
+            <format attr='display-field-labels' scope='cols' value='false' />
+          </style-rule>
+          <style-rule element='dropline'>
+            <format attr='wrap' scope='rows' value='on' />
+            <format attr='text-align' scope='rows' value='left' />
+            <format attr='text-align' scope='cols' value='left' />
+          </style-rule>
+          <style-rule element='table-div'>
+            <format attr='div-level' scope='rows' value='0' />
+          </style-rule>
+          <style-rule element='legend-title'>
+            <format attr='text-align' value='center' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane id='6' selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Bar' />
+            <mark-sizing mark-sizing-setting='marks-scaling-off' />
+            <encodings>
+              <color column='[federated.1pedc1q17n0c2r19hi48t190glbj].[none:label:ok]' />
+              <lod column='[federated.1pedc1q17n0c2r19hi48t190glbj].[:Measure Names]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='size' value='1.5492265224456787' />
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-show' value='false' />
+              </style-rule>
+              <style-rule element='pane'>
+                <format attr='minwidth' value='371' />
+                <format attr='maxwidth' value='371' />
+                <format attr='aspect' value='0' />
+                <format attr='minwidth' value='371' />
+                <format attr='maxwidth' value='371' />
+                <format attr='aspect' value='0' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.1pedc1q17n0c2r19hi48t190glbj].[sum:Calculation_7997363473465352:qk]</rows>
+        <cols>[federated.1pedc1q17n0c2r19hi48t190glbj].[none:label:ok]</cols>
+      </table>
+      <simple-id uuid='{B5A2B6B6-159E-44A9-884C-C2EBD604FD90}' />
+    </worksheet>
+    <worksheet name='付款率'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='user_log_format1.csv+ (多个连接)' name='federated.1pedc1q17n0c2r19hi48t190glbj' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1pedc1q17n0c2r19hi48t190glbj'>
+            <column caption='付款率' datatype='real' name='[Calculation_7997363422625798]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='SUM(IF [action_type] = 3 THEN 1 END) / SUM(IF [action_type] = 2 THEN 1 END)' />
+            </column>
+            <column caption='Action Type' datatype='integer' name='[action_type]' role='measure' type='quantitative'>
+              <aliases>
+                <alias key='0' value='浏览' />
+                <alias key='1' value='加购' />
+                <alias key='2' value='下单' />
+                <alias key='3' value='付款' />
+              </aliases>
+            </column>
+            <column aggregation='Sum' caption='Label' datatype='integer' name='[label]' role='dimension' type='ordinal'>
+              <aliases>
+                <alias key='0' value='非复购用户' />
+                <alias key='1' value='复购用户' />
+              </aliases>
+            </column>
+            <column-instance column='[label]' derivation='None' name='[none:label:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[Calculation_7997363422625798]' derivation='User' name='[usr:Calculation_7997363422625798:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.1pedc1q17n0c2r19hi48t190glbj].[none:label:ok]'>
+            <groupfilter function='union' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate'>
+              <groupfilter function='member' level='[none:label:ok]' member='0' />
+              <groupfilter function='member' level='[none:label:ok]' member='1' />
+            </groupfilter>
+          </filter>
+          <slices>
+            <column>[federated.1pedc1q17n0c2r19hi48t190glbj].[none:label:ok]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='cell'>
+            <format attr='text-format' field='[federated.1pedc1q17n0c2r19hi48t190glbj].[usr:Calculation_7997363422625798:qk]' value='p0.00%' />
+          </style-rule>
+          <style-rule element='label'>
+            <format attr='text-format' field='[federated.1pedc1q17n0c2r19hi48t190glbj].[usr:Calculation_7997363422625798:qk]' value='p0.00%' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.1pedc1q17n0c2r19hi48t190glbj].[none:label:ok]' />
+              <text column='[federated.1pedc1q17n0c2r19hi48t190glbj].[usr:Calculation_7997363422625798:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.1pedc1q17n0c2r19hi48t190glbj].[usr:Calculation_7997363422625798:qk]</rows>
+        <cols>[federated.1pedc1q17n0c2r19hi48t190glbj].[none:label:ok]</cols>
+      </table>
+      <simple-id uuid='{D5B24C55-FD61-47FA-A8F7-41C05152E2BB}' />
+    </worksheet>
+    <worksheet name='用户年龄分布'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='user_log_format1.csv+ (多个连接)' name='federated.1pedc1q17n0c2r19hi48t190glbj' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1pedc1q17n0c2r19hi48t190glbj'>
+            <column caption='Age Range' datatype='integer' name='[age_range]' role='measure' type='quantitative' />
+            <column aggregation='Sum' caption='Label' datatype='integer' name='[label]' role='dimension' type='ordinal'>
+              <aliases>
+                <alias key='0' value='非复购用户' />
+                <alias key='1' value='复购用户' />
+              </aliases>
+            </column>
+            <column-instance column='[age_range]' derivation='None' name='[none:age_range:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[label]' derivation='None' name='[none:label:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[user_id (user_info_format1.csv)]' derivation='Sum' name='[sum:user_id (user_info_format1.csv):qk]' pivot='key' type='quantitative' />
+            <column caption='User Id (User Info Format1.Csv)' datatype='integer' name='[user_id (user_info_format1.csv)]' role='dimension' type='ordinal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.1pedc1q17n0c2r19hi48t190glbj].[none:label:ok]'>
+            <groupfilter function='union' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate'>
+              <groupfilter function='member' level='[none:label:ok]' member='0' />
+              <groupfilter function='member' level='[none:label:ok]' member='1' />
+            </groupfilter>
+          </filter>
+          <slices>
+            <column>[federated.1pedc1q17n0c2r19hi48t190glbj].[none:label:ok]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <encoding attr='space' class='0' field='[federated.1pedc1q17n0c2r19hi48t190glbj].[none:age_range:qk]' field-type='quantitative' max='9' min='1' range-type='fixed' scope='cols' type='space' />
+            <format attr='width' field='[federated.1pedc1q17n0c2r19hi48t190glbj].[sum:user_id (user_info_format1.csv):qk]' value='56' />
+          </style-rule>
+          <style-rule element='cell'>
+            <format attr='cell-w' value='44' />
+            <format attr='cell-h' value='22' />
+            <format attr='cell' value='22' />
+            <format attr='cell-q' value='110' />
+          </style-rule>
+          <style-rule element='table'>
+            <format attr='omit-on-special' field='[federated.1pedc1q17n0c2r19hi48t190glbj].[none:age_range:qk]' value='false' />
+            <format attr='break-on-special' field='[federated.1pedc1q17n0c2r19hi48t190glbj].[none:age_range:qk]' value='false' />
+            <format attr='show-null-value-warning' field='[federated.1pedc1q17n0c2r19hi48t190glbj].[none:age_range:qk]' value='false' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Area' />
+            <mark-sizing mark-sizing-setting='marks-scaling-off' />
+            <encodings>
+              <color column='[federated.1pedc1q17n0c2r19hi48t190glbj].[none:label:ok]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='size' value='1.9890055656433105' />
+              </style-rule>
+              <style-rule element='pane'>
+                <format attr='minwidth' value='290' />
+                <format attr='maxwidth' value='290' />
+                <format attr='aspect' value='0' />
+                <format attr='minheight' value='546' />
+                <format attr='maxheight' value='546' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.1pedc1q17n0c2r19hi48t190glbj].[sum:user_id (user_info_format1.csv):qk]</rows>
+        <cols>[federated.1pedc1q17n0c2r19hi48t190glbj].[none:age_range:qk]</cols>
+      </table>
+      <simple-id uuid='{9B44EE4A-4D6E-4A18-BE9E-B04BAA98EA97}' />
+    </worksheet>
+  </worksheets>
+  <dashboards>
+    <dashboard enable-sort-zone-taborder='true' name='仪表板 1'>
+      <style />
+      <size maxheight='800' maxwidth='1000' minheight='800' minwidth='1000' />
+      <zones>
+        <zone h='100000' id='4' type-v2='layout-basic' w='100000' x='0' y='0'>
+          <zone h='98000' id='22' param='horz' type-v2='layout-flow' w='98400' x='800' y='1000'>
+            <zone h='98000' id='20' type-v2='layout-basic' w='82400' x='800' y='1000'>
+              <zone h='24500' id='10' param='horz' type-v2='layout-flow' w='82400' x='800' y='25500'>
+                <zone h='24500' id='7' param='horz' type-v2='layout-flow' w='82400' x='800' y='25500'>
+                  <zone h='24500' id='5' type-v2='layout-basic' w='82400' x='800' y='25500'>
+                    <zone h='24500' id='18' param='horz' type-v2='layout-flow' w='82400' x='800' y='25500'>
+                      <zone h='24500' id='19' name='人均下单次数' show-title='false' w='27166' x='800' y='25500'>
+                        <layout-cache cell-count-w='2' minheight='374' non-cell-size-w='59' type-h='scalable' type-w='cell' />
+                        <zone-style>
+                          <format attr='border-color' value='#000000' />
+                          <format attr='border-style' value='none' />
+                          <format attr='border-width' value='0' />
+                          <format attr='margin' value='4' />
+                        </zone-style>
+                      </zone>
+                      <zone h='24500' id='25' name='人均浏览次数' show-title='false' w='28066' x='27966' y='25500'>
+                        <layout-cache cell-count-w='2' non-cell-size-w='68' type-h='fixed' type-w='cell' />
+                        <zone-style>
+                          <format attr='border-color' value='#000000' />
+                          <format attr='border-style' value='none' />
+                          <format attr='border-width' value='0' />
+                          <format attr='margin' value='4' />
+                        </zone-style>
+                      </zone>
+                      <zone h='24500' id='26' name='人均付款次数' show-title='false' w='27166' x='56032' y='25500'>
+                        <layout-cache cell-count-w='2' non-cell-size-w='59' type-h='fixed' type-w='cell' />
+                        <zone-style>
+                          <format attr='border-color' value='#000000' />
+                          <format attr='border-style' value='none' />
+                          <format attr='border-width' value='0' />
+                          <format attr='margin' value='4' />
+                        </zone-style>
+                      </zone>
+                    </zone>
+                  </zone>
+                </zone>
+              </zone>
+              <zone h='49000' id='12' name='用户年龄分布' w='82400' x='800' y='50000'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+              <zone forceUpdate='true' h='24500' id='13' type-v2='text' w='82400' x='800' y='1000'>
+                <formatted-text>
+                  <run bold='true' fontalignment='1' fontcolor='#f28e2b' fontname='微软雅黑' fontsize='48'>天猫用户复购行为分析</run>
+                </formatted-text>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+            </zone>
+            <zone fixed-size='160' h='98000' id='21' is-fixed='true' param='vert' type-v2='layout-flow' w='16000' x='83200' y='1000'>
+              <zone h='9000' id='23' name='人均下单次数' pane-specification-id='20' param='[federated.1pedc1q17n0c2r19hi48t190glbj].[none:label:ok]' type-v2='color' w='16000' x='83200' y='1000'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+            </zone>
+          </zone>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='margin' value='8' />
+          </zone-style>
+        </zone>
+      </zones>
+      <devicelayouts>
+        <devicelayout auto-generated='true' name='Phone'>
+          <size maxheight='1050' minheight='1050' sizing-mode='vscroll' />
+          <zones>
+            <zone h='100000' id='28' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='98000' id='27' param='vert' type-v2='layout-flow' w='98400' x='800' y='1000'>
+                <zone forceUpdate='true' h='24500' id='13' type-v2='text' w='82400' x='800' y='1000'>
+                  <formatted-text>
+                    <run bold='true' fontalignment='1' fontcolor='#f28e2b' fontname='微软雅黑' fontsize='48'>天猫用户复购行为分析</run>
+                  </formatted-text>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='188' h='24500' id='19' is-fixed='true' name='人均下单次数' show-title='false' w='27766' x='800' y='25500'>
+                  <layout-cache minheight='374' type-h='scalable' type-w='cell' />
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='9000' id='23' name='人均下单次数' pane-specification-id='20' param='[federated.1pedc1q17n0c2r19hi48t190glbj].[none:label:ok]' type-v2='color' w='16000' x='83200' y='1000'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='188' h='24500' id='25' is-fixed='true' name='人均浏览次数' show-title='false' w='26866' x='28566' y='25500'>
+                  <layout-cache type-h='fixed' type-w='cell' />
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='188' h='24500' id='26' is-fixed='true' name='人均付款次数' show-title='false' w='27766' x='55432' y='25500'>
+                  <layout-cache type-h='fixed' type-w='cell' />
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='49000' id='12' is-fixed='true' name='用户年龄分布' w='82400' x='800' y='50000'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+              </zone>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='8' />
+              </zone-style>
+            </zone>
+          </zones>
+        </devicelayout>
+      </devicelayouts>
+      <simple-id uuid='{15AB1832-A501-44F1-9489-0C40924D0820}' />
+    </dashboard>
+  </dashboards>
+  <windows saved-dpi-scale-factor='1.25' source-height='37'>
+    <window class='worksheet' name='人均浏览次数'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='6' param='[federated.1pedc1q17n0c2r19hi48t190glbj].[none:label:ok]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{6A954311-187D-439C-9C3A-4FA674DA6249}' />
+    </window>
+    <window class='worksheet' name='人均下单次数'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='20' param='[federated.1pedc1q17n0c2r19hi48t190glbj].[none:label:ok]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{EB5235AA-D55B-4C48-A4F8-E7D0B4C26847}' />
+    </window>
+    <window class='worksheet' name='人均付款次数'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.1pedc1q17n0c2r19hi48t190glbj].[none:label:ok]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{07C85B44-80D7-46F9-874C-025582774DFA}' />
+    </window>
+    <window class='worksheet' name='下单率'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='13' param='[federated.1pedc1q17n0c2r19hi48t190glbj].[none:label:ok]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{7EFA9409-450A-4F07-8B2F-8D60C9FC6643}' />
+    </window>
+    <window class='worksheet' name='付款率'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.1pedc1q17n0c2r19hi48t190glbj].[none:label:ok]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{D9AB897F-ADBD-48C8-90B5-BFE6AB062786}' />
+    </window>
+    <window class='worksheet' maximized='true' name='用户年龄分布'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.1pedc1q17n0c2r19hi48t190glbj].[none:label:ok]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <zoom type='fit-width' />
+      </viewpoint>
+      <simple-id uuid='{C2F6ABC9-40CA-4D65-B349-75D609299D9E}' />
+    </window>
+    <window class='dashboard' name='仪表板 1'>
+      <viewpoints>
+        <viewpoint name='人均下单次数'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='人均付款次数'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='人均浏览次数'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='用户年龄分布'>
+          <zoom type='entire-view' />
+        </viewpoint>
+      </viewpoints>
+      <active id='21' />
+      <simple-id uuid='{D8EDDA64-FED0-4C54-BE37-496451B267D0}' />
+    </window>
+  </windows>
+</workbook>
